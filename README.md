@@ -1,0 +1,124 @@
+# DataGen CLI — Synthetic Dataset Generator
+
+**Created by:** Rishabh Kumar  
+**Version:** 0.1.3 
+**License:** Rishabh License --MIT(Non-Commercial) (For commercial use need to contact the developer)
+
+---
+## Command to Run
+
+Once installed, simply launch the generator using: datagen
+
+datagen
+## Overview
+
+DataGen CLI is a command-line tool that allows you to generate synthetic datasets with customizable columns, formats, and sizes.  
+It is designed for developers, data analysts, and machine learning practitioners who need realistic data for testing, demonstrations, or prototyping.
+
+---
+
+## Features
+
+- 50+ predefined column types (customer, sales, weather, system logs, etc.)
+- Supports multiple output formats: CSV, Excel (XLSX), and JSON
+- Interactive CLI prompts for easy configuration
+- Color-coded terminal interface using Rich
+- Custom date range support for time-based data
+- Lightweight and fast (powered by Typer, Faker, and Pandas)
+
+---
+
+## Installation
+
+Install directly from PyPI (once published):
+
+pip install datagen-cli
+Verify installation:
+
+
+datagen --help
+Quick Start
+
+
+----- To generate your first dataset, run: datagen
+
+
+Example Output in Terminal
+
+────────────────────────────────────────────────────────────
+        DataGen CLI - Synthetic Dataset Generator
+────────────────────────────────────────────────────────────
+Created by: Rishabh Kumar
+Version: 0.1.3
+Description: A CLI tool to generate customizable synthetic datasets
+────────────────────────────────────────────────────────────
+Use 'datagen --help' to see available commands
+
+Tip: Run 'datagen generate' to create your first dataset.
+────────────────────────────────────────────────────────────
+Example Usage
+
+Step 1: Start the Generator
+
+datagen generate
+Step 2: Follow Prompts
+vbnet
+Enter number of rows to generate: 10000
+Enter start date (YYYY-MM-DD): 2022-01-01
+Enter end date (YYYY-MM-DD): 2024-12-31
+
+Available Columns:
+1. OrderID   2. CustomerName   3. Country   4. Sales   5. Profit  ... up to 50
+Enter column numbers to include (comma-separated): 1,2,4,5
+
+Enter folder path to save file: ./data/
+Enter file name: sample_sales
+Choose file type (csv/xlsx/json): csv
+Data is generated and saved automatically:
+
+
+Data generated successfully and saved to: ./data/sample_sales.csv
+Supported Column Types
+Category	Example Columns
+Customer Info	Name, Email, Gender, Age, Country, City
+Sales Data	OrderID, Quantity, Sales, Profit, Discount
+Employment	EmployeeName, Department, JobTitle, Salary
+System Logs	IP_Address, Browser, DeviceType, LoginTime
+Weather	Temperature, Humidity, WeatherCondition
+Finance	AccountBalance, CreditScore, TransactionID
+Miscellaneous	RandomText, BooleanFlag, Region, State
+
+--- Total Columns: 50 predefined and ready to use.
+
+Technical Details
+Component	Library
+CLI Framework	Typer
+Terminal UI	Rich
+Fake Data	Faker
+Data Handling	Pandas
+Excel Support	OpenPyXL
+
+Developer Information
+Author: Rishabh Kumar
+Email: rishabh@example.com
+GitHub: github.com/rishabhkumar
+
+License
+This project is licensed under the MIT License (if not for commercial use).
+You are free to use, modify, and distribute this software(non-commercial).
+
+---- For commercial use contact rishabh.contact.info@gmail.com
+
+Contributing
+Fork the repository
+
+Create your feature branch (git checkout -b feature/new-feature)
+
+Commit your changes (git commit -m 'Add new feature')
+
+Push to the branch (git push origin feature/new-feature)
+
+
+Notes--
+Good datasets lead to better models.
+DataGen CLI helps you build, test, and experiment faster with clean and realistic synthetic data.
