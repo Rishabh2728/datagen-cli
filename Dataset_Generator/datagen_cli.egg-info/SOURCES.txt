@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+datagen/__init__.py
+datagen/main.py
+datagen_cli.egg-info/PKG-INFO
+datagen_cli.egg-info/SOURCES.txt
+datagen_cli.egg-info/dependency_links.txt
+datagen_cli.egg-info/entry_points.txt
+datagen_cli.egg-info/requires.txt
+datagen_cli.egg-info/top_level.txt

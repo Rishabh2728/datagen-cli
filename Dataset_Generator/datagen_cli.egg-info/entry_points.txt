@@ -1,0 +1,2 @@
+[console_scripts]
+datagen = datagen.main:app
