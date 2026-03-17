@@ -1,8 +1,15 @@
 # 🚀 DataGen CLI — Synthetic Dataset Generator
 
-**Built by:** Rishabh Kumar
-**Version:** 0.1.3
-**License:** MIT (Non-Commercial) — For commercial use, contact: `rishabh.contact.info@gmail.com`
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python">
+  <img src="https://img.shields.io/badge/CLI-Typer-orange?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Data-Faker-green?style=for-the-badge">
+  <img src="https://img.shields.io/badge/License-Non--Commercial-red?style=for-the-badge">
+</p>
+
+<p align="center">
+  <b>⚡ Generate realistic datasets in seconds — directly from your terminal</b>
+</p>
 
 ---
 
@@ -11,10 +18,20 @@
 **DataGen CLI** is a powerful command-line tool for generating realistic synthetic datasets with customizable columns, formats, and sizes.
 
 It is designed for:
+- 🧑‍💻 Developers (API testing & backend systems)
+- 📊 Data Scientists (model training & experiments)
+- 🎓 Students (projects & assignments)
 
-* 🧑‍💻 Developers (testing APIs & apps)
-* 📊 Data Scientists (model training & experiments)
-* 🏫 Students (projects & assignments)
+---
+
+## ✨ Key Features
+
+- 🔹 **50+ Predefined Columns**
+- 🔹 **Multiple Formats** → CSV, Excel, JSON
+- 🔹 **Interactive CLI**
+- 🔹 **Realistic Fake Data (Faker)**
+- 🔹 **Custom Date Range**
+- 🔹 **Fast & Lightweight**
 
 ---
 
