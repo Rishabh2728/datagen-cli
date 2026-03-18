@@ -1,0 +1,5 @@
+example.com
+sample.org
+datagen.dev
+demo.net
+test.io
