@@ -46,17 +46,23 @@ Most tools generate random, unrealistic data.
 ## ⚡ Quick Demo
 
 ### 🐍 Python
+
 ```python
-from datagen import generate
+
+from datagen import generate_dataset
 
 schema = {
-    "name": {"type": "name"},
-    "age": {"type": "int", "min": 18, "max": 60},
-    "salary": {"type": "float", "min": 30000, "max": 100000}
+    "rows": 5,
+    "columns": [
+        {"name": "name"},
+        {"name": "age", "generator": "int", "params": {"min": 18, "max": 60}},
+        {"name": "salary", "generator": "int", "params": {"min": 30000, "max": 100000}}
+    ]
 }
 
-df = generate(schema=schema, rows=5)
+df = generate_dataset(schema)
 print(df)
+
 ```
 
 ### 💻 CLI
