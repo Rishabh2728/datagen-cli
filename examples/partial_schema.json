@@ -1,0 +1,12 @@
+{
+  "name": "users_preview",
+  "rows": 5,
+  "columns": [
+    { "name": "customer_id", "generator": "order_id" },
+    { "name": "name" },
+    { "name": "email" },
+    { "name": "age" },
+    { "name": "signup_date", "generator": "date" },
+    { "name": "is_active" }
+  ]
+}

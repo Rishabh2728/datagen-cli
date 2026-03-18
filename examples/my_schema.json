@@ -1,0 +1,9 @@
+{
+  "rows": 10,
+  "columns": [
+    { "name": "name" },
+    { "name": "email" },
+    { "name": "age" },
+    { "name": "is_active" }
+  ]
+}
