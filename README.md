@@ -1,206 +1,186 @@
-# 🚀 DataGen CLI — Synthetic Dataset Generator
-
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python">
-  <img src="https://img.shields.io/badge/CLI-Typer-orange?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Data-Faker-green?style=for-the-badge">
-  <img src="https://img.shields.io/badge/License-Non--Commercial-red?style=for-the-badge">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8B0000,100:4B0082&height=200&section=header&text=DataGen%20CLI&fontSize=40&fontColor=ffffff&animation=fadeIn&fontAlignY=35" />
 </p>
 
 <p align="center">
-  <b>⚡ Generate realistic datasets in seconds — directly from your terminal</b>
+  <b>Schema-driven synthetic data generation for developers & data scientists</b>
+</p>
+
+<p align="center">
+  ⚡ Python API & CLI • 📊 DataFrame Ready • 🔍 Strict Validation • 📁 CSV / JSON / Excel
 </p>
 
 ---
 
-## 📌 Overview
+# 🚀 DataGen CLI
 
-**DataGen CLI** is a powerful command-line tool for generating realistic synthetic datasets with customizable columns, formats, and sizes.
-
-It is designed for:
-- 🧑‍💻 Developers (API testing & backend systems)
-- 📊 Data Scientists (model training & experiments)
-- 🎓 Students (projects & assignments)
+> Built an official Python library with **12K+ downloads** — designed to solve a real problem faced by data science students and developers:  
+> **getting clean, structured, and usable datasets instantly.**
 
 ---
 
-## ✨ Key Features
+## ✨ About
 
-- 🔹 **50+ Predefined Columns**
-- 🔹 **Multiple Formats** → CSV, Excel, JSON
-- 🔹 **Interactive CLI**
-- 🔹 **Realistic Fake Data (Faker)**
-- 🔹 **Custom Date Range**
-- 🔹 **Fast & Lightweight**
+Most tools generate random, unrealistic data.
 
----
+**DataGen CLI is different.**
 
-## ✨ Key Features
-
-* 🔹 **50+ Predefined Columns**
-
-  * Customer data, sales, finance, logs, weather & more
-
-* 🔹 **Multiple Export Formats**
-
-  * CSV, Excel (XLSX), JSON
-
-* 🔹 **Interactive CLI**
-
-  * Easy-to-use prompts (no complex commands)
-
-* 🔹 **Realistic Fake Data**
-
-  * Powered by Faker for human-like datasets
-
-* 🔹 **Custom Date Ranges**
-
-  * Generate time-based data easily
-
-* 🔹 **Lightweight & Fast**
-
-  * Generates thousands to millions of rows efficiently
+👉 Define your own schema  
+👉 Generate meaningful, constraint-aware datasets  
+👉 Use directly in Python or via CLI  
 
 ---
 
-## ⚡ Installation
+## 🔥 Key Features
 
-Install using pip:
-
-```bash
-pip install datagen-cli
-```
-
-Verify installation:
-
-```bash
-datagen --help
-```
+- 🧠 **Schema-driven generation**
+- 📊 **Returns pandas DataFrame**
+- 💻 **Python + CLI support**
+- 📁 Export to **CSV, JSON, Excel**
+- 🔍 **Strict validation system**
+- ⚡ Lightweight & fast
+- 🧪 Fully tested (**24/24 tests passed**)
 
 ---
 
-## 🚀 Quick Start
+## ⚡ Quick Demo
 
-Run the generator:
+### 🐍 Python
 
-```bash
-datagen generate
-```
+```python
+from datagen import generate
 
----
+schema = {
+    "name": {"type": "name"},
+    "age": {"type": "int", "min": 18, "max": 60},
+    "salary": {"type": "float", "min": 30000, "max": 100000}
+}
 
-## 🧪 Example Usage
-
-### Step 1: Start CLI
-
-```bash
-datagen generate
-```
-
-### Step 2: Provide inputs
-
-```text
-Enter number of rows to generate: 10000
-Enter start date (YYYY-MM-DD): 2022-01-01
-Enter end date (YYYY-MM-DD): 2024-12-31
-
-Available Columns:
-1. OrderID   2. CustomerName   3. Country   4. Sales   5. Profit ...
-
-Enter column numbers to include: 1,2,4,5
-
-Enter folder path: ./data/
-Enter file name: sample_data
-Choose format (csv/xlsx/json): csv
-```
-
-### Output:
-
-```text
-Data generated successfully and saved to:
-./data/sample_data.csv
-```
-
----
-
-## 📊 Supported Column Categories
-
-| Category      | Examples                         |
-| ------------- | -------------------------------- |
-| Customer Data | Name, Email, Gender, Age, City   |
-| Sales Data    | OrderID, Sales, Profit, Discount |
-| Employment    | EmployeeName, Salary, JobTitle   |
-| Logs          | IP_Address, Browser, LoginTime   |
-| Weather       | Temperature, Humidity            |
-| Finance       | AccountBalance, CreditScore      |
-| Misc          | BooleanFlag, RandomText          |
-
----
-
-## 🛠 Tech Stack
-
-| Component       | Library  |
-| --------------- | -------- |
-| CLI Framework   | Typer    |
-| Terminal UI     | Rich     |
-| Fake Data       | Faker    |
-| Data Processing | Pandas   |
-| Excel Support   | OpenPyXL |
-
----
-
-## 📦 Project Structure
-
-```bash
+df = generate(schema=schema, rows=5)
+print(df)
+💻 CLI
+datagen generate schema.json --rows 100 --output data.csv
+🧾 Example Output
+        name   age    salary
+0   Rahul Sharma   25   54000
+1   Priya Verma   32   72000
+2   Aman Gupta    28   61000
+🧩 Architecture
 datagen/
 │
-├── main.py          # CLI entry point
+├── core/
+│   ├── engine.py
+│   ├── defaults.py
+│   ├── schema_normalizer.py
+│   └── schema_validator.py
+│
+├── cli/
+│   ├── app.py
+│   └── main.py
+│
 ├── __init__.py
-```
+│
+tests/
+├── test_cli.py
+└── test_core.py
+⚙️ Phase 1 — Core Engine (Completed ✅)
+✔️ Implemented
 
----
+Schema-driven engine (DataGenerationEngine)
 
-## 📈 Future Improvements (Roadmap)
+Python API (generate() → DataFrame)
 
-* 🔥 Schema-based data generation
-* 🌍 Region-specific datasets (India, US, etc.)
-* 🔗 Column relationships (city → state mapping)
-* ⚡ High-performance large dataset streaming
-* 🧩 Plugin system for custom generators
+CLI (Typer-based interface)
 
----
+Schema normalization
 
-## 👨‍💻 Developer
+Strict validation system
 
-**Rishabh Kumar**
-📧 Email: [rishabh.contact.info@gmail.com](mailto:rishabh.contact.info@gmail.com)
-🌐 GitHub: https://github.com/Rishabh2728
+File export support
 
----
+Testing suite
 
-## 📜 License
+🔒 Validation Rules
 
-This project is licensed under **MIT (Non-Commercial Use Only)**.
+✔️ min <= max for numeric fields
 
-For commercial licensing:
-📩 Contact: `rishabh.contact.info@gmail.com`
+✔️ Precision must be positive
 
----
+✔️ Date ranges must be valid
 
-## 🤝 Contributing
+✔️ Choice fields must not be empty
 
-Contributions are welcome!
+✔️ Unsupported types are rejected
 
-```bash
-git checkout -b feature/new-feature
-git commit -m "Add new feature"
-git push origin feature/new-feature
-```
+🚀 Installation
+pip install datagen
+💻 CLI Commands
+Command	Description
+generate	Generate dataset
+preview	Preview sample data
+validate	Validate schema
+📤 Export Formats
 
----
+CSV
 
-## 💡 Note
+JSON
 
-> Good datasets lead to better models.
+Excel (.xlsx)
 
-**DataGen CLI helps you build, test, and experiment faster with clean and realistic synthetic data.**
+⚡ Performance
+
+⚡ Lightweight package (KBs only)
+
+🚀 Tested with 1 crore rows × 17 columns
+
+🧠 Efficient memory usage
+
+🔮 Roadmap
+Phase 2 (Next)
+
+🌍 Region-based datasets (India 🇮🇳, US 🇺🇸)
+
+🔗 Relationship-aware data
+(city → state, salary → role)
+
+Phase 3
+
+🤖 Smart generation (learning from real datasets)
+
+🧪 Testing
+24 passed, 0 failed ✅
+
+Includes:
+
+Core engine tests
+
+CLI tests
+
+Validation tests
+
+🤝 Contributing
+git clone https://github.com/your-username/datagen-cli
+cd datagen-cli
+pip install -r requirements.txt
+👨‍💻 Author
+
+Rishabh Kumar
+
+Built to solve a real-world problem faced during learning data science
+
+Already helping thousands generate datasets instantly
+
+Now evolving into a full-scale synthetic data engine
+
+⭐ Support
+
+If this project helped you:
+
+👉 Star the repo
+👉 Share it
+👉 Use it in your projects
+
+💡 Vision
+
+Data shouldn’t be the bottleneck.
+It should be generated instantly.
