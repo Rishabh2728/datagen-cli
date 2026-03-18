@@ -9,8 +9,21 @@ from datagen.models.config import GenerationConfig
 from datagen.models.schema import DatasetSchema
 
 
-def _normalize_column_name(raw_name: str) -> str:
-    return raw_name.strip()
+def _normalize_column_name(raw_name: str, index: int, used_names: set[str]) -> str:
+    candidate = raw_name.strip()
+    if candidate:
+        used_names.add(candidate.lower())
+        return candidate
+
+    candidate = f"column_{index}"
+    normalized_key = candidate.lower()
+    while normalized_key in used_names:
+        index += 1
+        candidate = f"column_{index}"
+        normalized_key = candidate.lower()
+
+    used_names.add(normalized_key)
+    return candidate
 
 
 def _name_key(column_name: str) -> str:
@@ -32,12 +45,13 @@ def _infer_column_defaults(column_name: str) -> Dict[str, Any]:
 
 def _normalize_columns(columns: Iterable[Any]) -> List[ColumnSchema]:
     normalized_columns: List[ColumnSchema] = []
+    used_names: set[str] = set()
 
-    for raw_column in columns:
+    for index, raw_column in enumerate(columns, start=1):
         if isinstance(raw_column, str):
             raw_column = {"name": raw_column}
 
-        column_name = _normalize_column_name(str(raw_column.get("name", "column")))
+        column_name = _normalize_column_name(str(raw_column.get("name") or ""), index, used_names)
         inferred = _infer_column_defaults(column_name)
         generator_name = raw_column.get("generator") or raw_column.get("type") or inferred["generator"]
         params = get_default_generator_params(generator_name)
