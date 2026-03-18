@@ -7,6 +7,7 @@ DEFAULT_ROWS = 100
 DEFAULT_DATASET_NAME = "generated_dataset"
 DEFAULT_LOCALE = "en_US"
 DEFAULT_EXPORT_FORMAT = "csv"
+SUPPORTED_DTYPES = {"string", "int", "float", "bool", "date", "datetime"}
 
 DEFAULT_SCHEMA: Dict[str, Any] = {
     "name": DEFAULT_DATASET_NAME,
