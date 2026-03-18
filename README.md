@@ -1,53 +1,37 @@
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8B0000,100:4B0082&height=200&section=header&text=DataGen%20CLI&fontSize=40&fontColor=ffffff&animation=fadeIn&fontAlignY=35" />
-</p>
+<p align="center"> <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8B0000,100:4B0082&height=200&section=header&text=DataGen%20CLI&fontSize=40&fontColor=ffffff&animation=fadeIn&fontAlignY=35" /> </p> <p align="center"> <b>Schema-driven synthetic data generation for developers & data scientists</b> </p> <p align="center"> ⚡ Python API & CLI • 📊 DataFrame Ready • 🔍 Strict Validation • 📁 CSV / JSON / Excel </p>
+🚀 DataGen CLI
 
-<p align="center">
-  <b>Schema-driven synthetic data generation for developers & data scientists</b>
-</p>
+Built an official Python library with 12K+ downloads — designed to solve a real problem faced by data science students and developers:
+getting clean, structured, and usable datasets instantly.
 
-<p align="center">
-  ⚡ Python API & CLI • 📊 DataFrame Ready • 🔍 Strict Validation • 📁 CSV / JSON / Excel
-</p>
-
----
-
-# 🚀 DataGen CLI
-
-> Built an official Python library with **12K+ downloads** — designed to solve a real problem faced by data science students and developers:  
-> **getting clean, structured, and usable datasets instantly.**
-
----
-
-## ✨ About
+✨ About
 
 Most tools generate random, unrealistic data.
 
-**DataGen CLI is different.**
+DataGen CLI is different.
 
-👉 Define your own schema  
-👉 Generate meaningful, constraint-aware datasets  
-👉 Use directly in Python or via CLI  
+👉 Define your own schema
+👉 Generate meaningful, constraint-aware datasets
+👉 Use directly in Python or via CLI
 
----
+🔥 Key Features
 
-## 🔥 Key Features
+🧠 Schema-driven generation
 
-- 🧠 **Schema-driven generation**
-- 📊 **Returns pandas DataFrame**
-- 💻 **Python + CLI support**
-- 📁 Export to **CSV, JSON, Excel**
-- 🔍 **Strict validation system**
-- ⚡ Lightweight & fast
-- 🧪 Fully tested (**24/24 tests passed**)
+📊 Returns pandas DataFrame
 
----
+💻 Python + CLI support
 
-## ⚡ Quick Demo
+📁 Export to CSV, JSON, Excel
 
-### 🐍 Python
+🔍 Strict validation system
 
-```python
+⚡ Lightweight & fast
+
+🧪 Fully tested (24/24 tests passed)
+
+⚡ Quick Demo
+🐍 Python
 from datagen import generate
 
 schema = {
